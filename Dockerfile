@@ -9,7 +9,9 @@ RUN useradd -m ctf
 WORKDIR /home/ctf
 
 RUN cp -R /lib* /home/ctf && \
-    cp -R /usr/lib* /home/ctf
+    cp -R /usr/lib* /home/ctf && \
+    cp -R /usr/arm-linux-gnueabi /home/ctf && \
+    cp -R /usr/aarch64-linux-gnu /home/ctf 
 
 RUN mkdir /home/ctf/dev && \
     mknod /home/ctf/dev/null c 1 3 && \
